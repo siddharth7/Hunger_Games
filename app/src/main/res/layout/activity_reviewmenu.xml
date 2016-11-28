@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+xmlns:ads="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <LinearLayout
+    android:id="@+id/wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="12dp"
+    android:orientation="vertical">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="10dp" />
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:id="@+id/relContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/wrapper"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_amount"
+        android:text="Total"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/split_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Split Bill"
+        android:layout_below="@id/total_amount"
+        android:singleLine="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/number"
+        android:paddingTop="10dp"
+        android:windowSoftInputMode="adjustPan"
+        android:layout_below="@+id/split_btn"
+        android:hint="Mobile Number" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        android:paddingTop="15dp"
+        android:id="@+id/place_order"
+        android:layout_below="@id/number"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
 </RelativeLayout>
